@@ -1,10 +1,80 @@
 <?php 
 /*
-Template name: FrontPage
+Template name: Homepage
 */
-get_header(); ?>
+?>
 
-<h1 class="top-title"> Let's Kickoff Your Next WordPress Project <i class="fa fa-thumbs-up"></i></h1>
+<!DOCTYPE html>
+<!--[if IE 8]> <html <?php language_attributes(); ?> class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html <?php language_attributes(); ?> class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->  
+<head>
+
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico">
+
+    <!-- Web Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+    <?php wp_head(); ?>
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/style.css">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/animate.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/line-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/venobox.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/app.css">
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/profile.css">
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/shortcode_timeline2.css">
+
+    <!-- CSS Customization -->
+
+    <!--[if lt IE 9]>
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/respond.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/html5shiv.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/js/placeholder-IE-fixes.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-78230898-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+    <!-- start of Zopim Live Chat Script-->
+    <script type="text/javascript">
+    window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+    d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+    _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+    $.src="//v2.zopim.com/?3wPu2kCAnHKH1R4xv60YXNsNtlbRKxi7";z.t=+new Date;$.
+    type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+    </script>
+    <!--End of Zopim Live Chat Script-->
+
+
+    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
+
+</head>	
+
+<body class="homepage">    
+
+<!-- <h1 class="top-title"> Let's Kickoff Your Next WordPress Project <i class="fa fa-thumbs-up"></i></h1> -->
 <div class="wrapper">
     <!--=== Profile ===-->
     <div class="container content profile">	
@@ -15,7 +85,7 @@ get_header(); ?>
                     <div class="profile-bio margin-bottom-30">
                         <div class="row">
                             <div class="col-sm-4">
-                                <img class="img-responsive md-margin-bottom-10" src="img/profile.png" alt="">
+                                <img class="img-responsive md-margin-bottom-10" src="<?php echo get_stylesheet_directory_uri(); ?>/img/profile.png" alt="">
                             </div>
                             <div class="col-sm-8">
 								<div class="col-sm-9 col-xs-9 no-padding">
@@ -23,8 +93,7 @@ get_header(); ?>
 									<strong>Responsive Designer and WordPress Developer</strong>
 								</div>
 								<div class="col-sm-3 col-xs-3 no-padding">
-								<!--	<a class="btn-u btn-u-sm pull-right contact-form" data-toggle="modal" data-target="#contactModal" href="#">Ask me</a>
--->								</div>
+								<a class="btn-u btn-u-sm pull-right contact-form" data-toggle="modal" data-target="#contactModal" href="#">Ask me</a>		</div>
 								<div class="clearfix"></div>
                                 <hr>
                                 <div class="overview">
@@ -37,6 +106,7 @@ get_header(); ?>
                                         <li><span class="badge badge-yellow rounded"> Plugin Development </span></li>
                                         <li><span class="badge badge-yellow rounded"> Customizing Existing Theme </span></li>
                                         <li><span class="badge badge-yellow rounded"> WooCommerce Solution </span></li>
+                                        <li><span class="badge badge-yellow rounded"> WordPress Multilingual </span></li>
                                         <li><span class="badge badge-yellow rounded"> PSD to Responsive HTML Template</span></li>
                                         <li><span class="badge badge-yellow rounded"> PSD to WordPress </span></li>
                                     </ul>
@@ -74,21 +144,7 @@ get_header(); ?>
                           <div class="modal-body">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 <div id="mainform">
-                                    <form id="contact_form">
-                                        <h3>Let’s kickoff your next <br> WordPress project <i class="fa fa-thumbs-up"></i> </h3>
-                                        <div id="contact_results"></div>
-
-                                        <label>Name: <span>*</span></label>
-                                        <input type="text" name="name" placeholder="Name"/>
-                                        
-                                        <label>Email: <span>*</span></label>
-                                        <input type="text" name="email" placeholder="Email"/>
-                                        
-                                        <label>Message:</label>
-                                        <textarea name="message" placeholder="Message......."></textarea>
-
-                                        <a href="#" class="btn-u btn-u-md cust-btn">Send message</a>
-                                    </form>
+                                <?php echo do_shortcode('[contact-form-7 id="7" title="Contact form 1"]'); ?>
                                 </div>
                           </div>
 
@@ -144,7 +200,7 @@ get_header(); ?>
 					
                         <!--Social Icons v3-->
                         <div class="col-sm-6 sm-margin-bottom-30">
-                            <div class="panel panel-profile">
+                            <div class="panel panel-profile site-developed">
                                 <div class="panel-heading overflow-h">
                                     <h2 class="panel-title heading-sm pull-left"><i class="fa fa-globe"></i> Recently developed websites </small></h2>
                                     <a href="#"></a>
@@ -152,23 +208,33 @@ get_header(); ?>
                                 <div class="panel-body">
                                      <ul class="list-unstyled social-contacts-v2">
                                         <li>
+                                            <div class="recent-work">
+                                                <a target="_blank" href="http://http://viz360.com.au"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/viz360.png" class="img-responsive">viz360.com.au</a>
+                                            </div>
+                                        </li>                                        
+                                        <li>
+                                            <div class="recent-work">
+                                                <a target="_blank" href="http://olive.dextel.net"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/olive-orange.png" class="img-responsive">olive.dextel.net</a>
+                                            </div>
+                                        </li>                                        
+                                        <li>
 											<div class="recent-work">
-												<a target="_blank" href="http://www.smartfleece.com"><img src="img/Smartfleece.png" class="img-responsive">Smartfleece.com</a>
+												<a target="_blank" href="http://www.smartfleece.com"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/Smartfleece.png" class="img-responsive">Smartfleece.com</a>
 											</div>
 										</li>
                                         <li>
 											<div class="recent-work">
-												<a target="_blank" href="http://www.writtenbysumer.com"><img src="img/summer.png" class="img-responsive">Writtenbysummer.com</a>
+												<a target="_blank" href="http://www.writtenbysumer.com"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/summer.png" class="img-responsive">Writtenbysummer.com</a>
 											</div>
 										</li>
                                         <li>
 											<div class="recent-work">
-												<a target="_blank" href="http://dsolution.com"><img src="img/dsolution.png" class="img-responsive">Dsolution.com</a>
+												<a target="_blank" href="http://dsolution.com"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/dsolution.png" class="img-responsive">Dsolution.com</a>
 											</div>
 										</li>
                                         <li>
 											<div class="recent-work">
-												<a target="_blank" href="http://www.quovimc3.com"><img src="img/quovim.png" class="img-responsive">Quovimc3.com</a>
+												<a target="_blank" href="http://www.quovimc3.com"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/quovim.png" class="img-responsive">Quovimc3.com</a>
 											</div>
 										</li>
                                     </ul>
@@ -183,7 +249,7 @@ get_header(); ?>
                         <div class="col-sm-12 margin-bottom-30">
                             <div class="panel panel-profile">
                                 <div class="panel-heading overflow-h">
-                                    <h2 class="panel-title heading-sm pull-right">check me on <a href="https://www.upwork.com/users/~0188ce4ab4eaceff53" target="_blank"> <img src="img/upwork-logo.png" alt="Upwork logo"></a></h2>
+                                    <h2 class="panel-title heading-sm pull-right">check me on <a href="https://www.upwork.com/users/~0188ce4ab4eaceff53" target="_blank"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/upwork-logo.png" alt="Upwork logo"></a></h2>
                                 </div>     
                             </div>
                         </div>
@@ -198,11 +264,39 @@ get_header(); ?>
                             <ul class="timeline-v2 timeline-me">
 
                                 <li>
+                                    <time datetime="" class="cbp_tmtime"><span>David Laufer</span> <span>Aug 2016</span></time>
+                                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                                    <div class="cbp_tmlabel">
+                                        <h2>Installation, updating and troubleshooting a site with wordpress salient/visual composer</h2>
+                                        <p>Azizul is either a Wordpress genius or a magician—maybe some of each! Fast, accomplished and easy to work with. Will definitely be back.</p>
+                                    </div>
+                                </li>                                  
+
+                                <li>
+                                    <time datetime="" class="cbp_tmtime"><span>Damian Traveiso</span> <span>Jul 2016 - Aug 2016</span></time>
+                                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                                    <div class="cbp_tmlabel">
+                                        <h2>Wordpress Website Development</h2>
+                                        <p>It's been great working with Azizul. He's a very good developer, knowledgeable, fast, hard working and responsible. I will definitely be hiring him again for website development jobs and also recommend him to anyone looking for a reliable dev!</p>
+                                    </div>
+                                </li>                                  
+
+                                <li>
+                                    <time datetime="Aug 2016" class="cbp_tmtime"><span>Ryan Vazquez</span> <span>Aug 2016</span></time>
+                                    <i class="cbp_tmicon rounded-x hidden-xs"></i>
+                                    <div class="cbp_tmlabel">
+                                        <h2>desktop website that is mobile responsive for cleaning business</h2>
+                                        <p>Azizul is VERY easy to work with. He speaks fluent english and easy to communicate. His work is ABSOLUTELY BEAUTIFUL. Azizul did not stop until i was happy. Thank you.</p>
+                                    </div>
+                                </li>                                
+
+                                <li>
                                     <time datetime="" class="cbp_tmtime"><span>Nairobi Morgan</span> <span>Jun 2016</span></time>
                                     <i class="cbp_tmicon rounded-x hidden-xs"></i>
                                     <div class="cbp_tmlabel">
                                         <h2>Need to create WordPress Child Theme For TRACKS PRO</h2>
-                                        <p>Mr. Haque is dedicated to client satisfaction. He has a very professional attitude, and solves problems quickly. I am very happy with the quality of the work he has done, and look forward to hiring him again. It was a great experience overall.</p>                             </div>
+                                        <p>Mr. Haque is dedicated to client satisfaction. He has a very professional attitude, and solves problems quickly. I am very happy with the quality of the work he has done, and look forward to hiring him again. It was a great experience overall.</p>
+                                    </div>
                                 </li>
                                 <li>
                                     <time datetime="" class="cbp_tmtime"><span>Letisha Brown</span> <span>Mar 2016 - May 2016</span></time>
@@ -266,7 +360,7 @@ get_header(); ?>
                                             <a href="https://bd.linkedin.com/in/azizultex" target="_blank"> LinkedIn </a>
                                         </li>                                        
                                         <li>
-                                            <img src="img/upwork.png" alt="upwork logo">
+                                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/upwork.png" alt="upwork logo">
                                             <a href="https://www.upwork.com/users/~0188ce4ab4eaceff53" target="_blank"> Upwork </a>
                                         </li>
                                         <li>
@@ -292,7 +386,7 @@ get_header(); ?>
                                         <li> Reasonable price, best quality.</li>
                                         <li> Keen eyes to clients requirements. </li>
                                         <li> Long term business relation and support.</li>
-                                        <li> Super fast reply via Email, Phone, Skype.</li>
+                                        <li> 24/7 reply via Email, Phone, Skype.</li>
 
                                     </ul> 
                                 </div>       
@@ -306,8 +400,22 @@ get_header(); ?>
             <!-- End Profile Content -->
             <p class="copyright"> All right reserved @2016, azizultex.com </p>
         </div>
+
+        <div id="testimonal"></div>
     </div>		
     <!--=== End Profile ===-->
 </div><!--/wrapper-->
 
-<?php get_footer(); ?>
+<!-- JS Global Compulsory -->           
+<?php wp_footer(); ?>
+
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/bootstrap.min.js"></script>
+<!-- JS Implementing Plugins -->
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/venobox.min.js"></script>
+
+<!-- JS Customization -->
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/readmore.min.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/js/setting.js"></script>
+
+</body>
+</html>	

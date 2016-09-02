@@ -1,10 +1,17 @@
 jQuery(document).ready(function($) {
     $('.overview').readmore({
         speed: 500, 
-        collapsedHeight: 185,
+        collapsedHeight: 235,
         moreLink: '<a href="#">Read more...</a>',
         lessLink: '<a href="#">Collapse</a>',
         blockCSS: 'float:right'
+    });     
+
+    $('.site-developed').readmore({
+        speed: 500, 
+        collapsedHeight: 210,
+        moreLink: '<a href="#" class="site_more">More sites...</a>',
+        lessLink: '<a href="#" class="site_more">Collapse</a>',
     }); 
 
     $('.timeline-me').readmore({
@@ -17,7 +24,7 @@ jQuery(document).ready(function($) {
 
     $('.top-title').hide();
     setTimeout(function(){ 
-        //$('.top-title').slideDown();
+        $('.top-title').slideDown();
     }, 3000);
 
 });
