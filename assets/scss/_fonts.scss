@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Azo Sans Web';
+    src: local('Azo Sans Web'), local('AzoWeb-Regular'),
+        url('assets/fonts/AzoWeb-Regular.woff2') format('woff2'),
+        url('assets/fonts/AzoWeb-Regular.woff') format('woff'),
+        url('assets/fonts/AzoWeb-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Azo Sans Web';
+    src: local('Azo Sans Web'), local('AzoWeb-BoldItalic'),
+        url('assets/fonts/AzoWeb-BoldItalic.woff2') format('woff2'),
+        url('assets/fonts/AzoWeb-BoldItalic.woff') format('woff'),
+        url('assets/fonts/AzoWeb-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Azo Sans Web';
+    src: local('Azo Sans Web'), local('AzoWeb-Bold'),
+        url('assets/fonts/AzoWeb-Bold.woff2') format('woff2'),
+        url('assets/fonts/AzoWeb-Bold.woff') format('woff'),
+        url('assets/fonts/AzoWeb-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Azo Sans Web';
+    src: local('Azo Sans Web'), local('AzoWeb-Italic'),
+        url('assets/fonts/AzoWeb-Italic.woff2') format('woff2'),
+        url('assets/fonts/AzoWeb-Italic.woff') format('woff'),
+        url('assets/fonts/AzoWeb-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TisaPro';
+    src: local('TisaPro'),
+        url('assets/fonts/TisaPro.woff2') format('woff2'),
+        url('assets/fonts/TisaPro.woff') format('woff'),
+        url('assets/fonts/TisaPro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TisaPro';
+    src: local('TisaPro-Ita'),
+        url('assets/fonts/TisaPro-Ita.woff2') format('woff2'),
+        url('assets/fonts/TisaPro-Ita.woff') format('woff'),
+        url('assets/fonts/TisaPro-Ita.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TisaPro';
+    src: local('TisaPro-BoldIta'),
+        url('assets/fonts/TisaPro-BoldIta.woff2') format('woff2'),
+        url('assets/fonts/TisaPro-BoldIta.woff') format('woff'),
+        url('assets/fonts/TisaPro-BoldIta.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TisaPro';
+    src: local('TisaPro-Bold'),
+        url('assets/fonts/TisaPro-Bold.woff2') format('woff2'),
+        url('assets/fonts/TisaPro-Bold.woff') format('woff'),
+        url('assets/fonts/TisaPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
