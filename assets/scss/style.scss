@@ -29,11 +29,11 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font: 400 16px/26px $tisa;
+    font: 400 20px/30px $tisa;
 }
 
 h1 {
-    font-size: 27px;
+    font-size: 35px;
     line-height: 1.5em;
     letter-spacing: -0.02em;
 }
@@ -102,12 +102,12 @@ h1, h2, h3, h4, h5, h6 {
             padding: 3vw;
             display: flex;
             min-height: 100vh;
-            text-align: center;
+            text-align: left;
             align-items: center;
             justify-content: center;
 
             &.max-width {
-                max-width: 760px;
+                max-width: 650px;
                 margin-left: auto;
                 margin-right: auto;
             }
@@ -131,6 +131,16 @@ h1, h2, h3, h4, h5, h6 {
 
                         &:nth-child(1) {
                             margin-bottom: 10px;
+                        }
+                    }
+
+                    > ul {
+                        padding-left: 0;
+                        list-style: none;
+                        display: flex;
+                        justify-content: flex-start;
+                        li {
+                            margin-right: 20px;
                         }
                     }
                 }
