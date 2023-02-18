@@ -10,9 +10,7 @@
 <body>
     <div class="site">
         <div class="site__banner">
-            <figure class="media">
-                <img src="assets/images/image-1.jpg" id="imageLoad" alt="azizul haque at capadocia">
-            </figure>
+            <figure id="imageLoad" class="media"></figure>
         </div>
 
         <div class="site__content">
@@ -52,12 +50,56 @@
                     <!-- <blockquote>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quis quia facilis ratione corrupti sint? Voluptatibus, at voluptatem delectus cupiditate.</p>
                     </blockquote> -->
-
-                    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-                    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        const albumID = 'TonRUBi8TdgyqtTu7';
+        const getImageUrl = async () => {
+            const response = await axios.get(
+                `https://google-photos-album-demo2.glitch.me/${albumID}`
+            );
+            const photos = response.data;
+            const randomPhotoIndex = Math.floor(Math.random() * photos.length);
+            return photos[randomPhotoIndex] + "=w1920";
+        };
+
+        const setImageUrl = async () => {
+            const imageLoad = document.getElementById("imageLoad");
+
+            $(imageLoad).LoadingOverlay("show"); // Show loading overlay
+
+            // $(imageLoad).LoadingOverlay("show", { 
+            //     image: "", 
+            //     text: "Loading...",
+            //     background: "rgba(255, 255, 255, 0.8)",
+            // }),
+            // setTimeout(function () {
+            //     $(imageLoad).LoadingOverlay("text", "Yep, still loading...");
+            // }, 300);
+
+            const imageUrl = await getImageUrl();
+            const img = document.createElement('img');
+            imageLoad.appendChild(img);
+
+            img.addEventListener("load", () => {
+                $(imageLoad).LoadingOverlay("hide"); // Hide loading overlay
+
+                // Set the image's alt text once it has fully loaded
+                img.alt = "Azizul Haque at Capadocia";
+            });
+
+            img.src = imageUrl;
+        };
+
+        setImageUrl();
+    </script>
 </body>
 </html>

@@ -267,3 +267,11 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 } 
+
+.loadingoverlay {
+
+    &_text {
+        text-align: center !important;
+        font-size: clamp(1.5rem, 3.55vw, 2.625rem) !important;
+    }
+}
