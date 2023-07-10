@@ -77,27 +77,24 @@
 
             $(imageLoad).LoadingOverlay("show"); // Show loading overlay
 
-            // $(imageLoad).LoadingOverlay("show", { 
-            //     image: "", 
-            //     text: "Loading...",
-            //     background: "rgba(255, 255, 255, 0.8)",
-            // }),
-            // setTimeout(function () {
-            //     $(imageLoad).LoadingOverlay("text", "Yep, still loading...");
-            // }, 300);
-
             const imageUrl = await getImageUrl();
             const img = document.createElement('img');
             imageLoad.appendChild(img);
 
-            img.addEventListener("load", () => {
-                $(imageLoad).LoadingOverlay("hide"); // Hide loading overlay
+            console.log(imageUrl);
 
-                // Set the image's alt text once it has fully loaded
-                img.alt = "Azizul Haque at Capadocia";
-            });
+            if ( imageUrl !== 'undefined=w1200' ) {
+                img.addEventListener("load", () => {
+                    $(imageLoad).LoadingOverlay("hide");
+                    img.alt = "Azizul Haque at Capadocia";
+                });
 
-            img.src = imageUrl;
+                img.src = imageUrl;
+            } else {
+                $(imageLoad).LoadingOverlay("hide");
+                img.src = 'assets/images/image-1.jpg';
+            }
+
         };
 
         setImageUrl();
