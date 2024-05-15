@@ -12,7 +12,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        server: 198.187.29.30
+        server: 199.188.200.135
         username: azizultex@azizultex.me
         password: ${{ secrets.FTP_PASSWORD }}
         exclude: |
