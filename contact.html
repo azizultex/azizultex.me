@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Azizul Haque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navigation">
+        <button class="navigation__toggler"><ion-icon name="grid-outline"></ion-icon></button>
+
+        <div id="sidr-main" class="sidr">
+            <div class="sidr-header">
+                <button class="sidrclose"><ion-icon name="close-outline"></ion-icon></button>
+            </div>
+
+            <div class="sidr-menu">
+                <ul class="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="active"><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="site">
+        <div class="site__banner">
+            <figure id="imageLoad" class="media"></figure>
+        </div>
+
+        <div class="site__content">
+            <div class="other-content">
+                <h1 class="title">Contact US</h1>
+
+                <div class="description">
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis ea voluptates optio porro velit, dolorum tempore dolor aliquid odit rerum.</p>
+                </div>
+
+                <div class="contact-form">
+                    <img src="assets/images/contact.png" width="100%" height="auto" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+    <script src="//unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="//unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.touchswipe/1.6.15/jquery.touchSwipe.min.js"></script>
+    <script>
+        $('.navigation__toggler').sidr({
+            side: 'right',
+            displace: false,
+            renaming: false,
+            name: 'sidr-main',
+            source: '#sidr-main',
+        });
+
+        $('.sidrclose').on('click', function(e){
+            e.preventDefault();
+            $.sidr('close', 'sidr-main');
+        });
+
+        $('body').swipe( {
+            threshold: 45,
+            swipeLeft: function () {
+                $.sidr('open', 'sidr-main');
+            },
+            swipeRight: function () {
+                $.sidr('close', 'sidr-main');
+            }
+        });
+
+        $(window).scroll(function(){
+            if($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
+                $.sidr('close', 'sidr-main');
+            }
+        });
+
+        document.getElementById("imageLoad").innerHTML = `<img src="assets/images/image-${Math.floor(Math.random() * 11) + 1}.jpg" alt="alt="Azizul Haque at Capadocia"">`;
+    </script>
+</body>
+</html>
