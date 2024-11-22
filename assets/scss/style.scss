@@ -1,3 +1,11 @@
+/*
+Theme Name: Azizul Haque
+Author: Azizul Haque
+Author URI: https://azizultex.me/
+Version: 1.0.0
+Text Domain: azizultex
+*/
+
 // COLORS
 $red: #EF4136;
 $gray: #ccd9e6;
@@ -465,6 +473,95 @@ h1, h2, h3, h4, h5, h6 {
                         width: 20px !important;
                         height: 20px !important;
                     }
+                }
+            }
+        }
+    }
+
+    .navigation  {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid #EEE9E1;
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+
+            .page-numbers {
+                border: 0;
+                color: #334199;
+                align-items: center;
+                display: inline-flex;
+                text-decoration: none;
+                @include transition(all 0.3s ease);
+
+                span {
+                    width: 45px;
+                    height: 45px;
+                    color: #334199;
+                    background: $white;
+                    align-items: center;
+                    display: inline-flex;
+                    border-radius: 700px;
+                    justify-content: center;
+                    border: 2px solid #334199;
+                    @include transition(all 0.3s ease);
+                    box-shadow: 0px 16px 16px 0px rgba(0, 0, 0, 0.06);
+
+                    &:hover {
+                        color: $white;
+                        background: #334199;
+                    }
+                }
+
+                &.prev {
+                    font-size: 0;
+                    flex-grow: 1;
+                    text-align: left;
+                    margin-right: 10px;
+                    justify-content: left;
+
+                    span {
+                        font-size: 20px;
+                        margin-right: 10px;
+                    }
+                }
+
+                &.next {
+                    font-size: 0;
+                    flex-grow: 1;
+                    text-align: right;
+                    margin-left: 10px;
+                    justify-content: end;
+
+                    span {
+                        font-size: 20px;
+                        margin-left: 10px;
+                    }
+                }
+
+                &:hover {
+                    color: $blue;
+                    text-decoration: underline;
+                }
+
+                &:not(.next):not(.prev):not(.dots) {
+                    width: 30px;
+                    height: 30px;
+                    color: $blue;
+                    display: inline;
+                    line-height: 30px;
+                    text-align: center;
+                    border-radius: 500px;
+                    background: transparent;
+                }
+
+                &.current {
+                    color: $white !important;
+                    background: $blue !important;
+                    text-decoration: none !important;
                 }
             }
         }
