@@ -938,20 +938,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .content__editor .max-width {
-    padding: 3vw;
     text-align: left;
     max-width: 650px;
-    min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
 }
 
 @media screen and (max-width: 800px) {
     .content__editor .max-width {
-        padding: 0;
         margin-left: 0;
         margin-right: 0;
         max-width: 100%;
+    }
+}
+
+.content__editor .h-100vh {
+    padding: 3vw;
+    min-height: 100vh;
+}
+
+@media screen and (max-width: 800px) {
+    .content__editor .h-100vh {
+        padding: 0;
         min-height: auto;
     }
 }
