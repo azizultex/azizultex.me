@@ -811,7 +811,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gform_wrapper .gform_validation_errors {
-    display: none;
+    display: none !important;
 }
 
 .content__editor h1, .content__editor .h1, .content__editor h2, .content__editor .h2, .content__editor h3, .content__editor .h3, .content__editor h4, .content__editor .h4, .content__editor h5, .content__editor .h5, .content__editor h6, .content__editor .h6 {

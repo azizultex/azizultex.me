@@ -22,7 +22,7 @@ add_action( 'after_setup_theme', 'azizultex_setup' );
 function venturelane_scripts() {
 
 	/*** Enqueue styles. */
-	wp_enqueue_style( 'azizultex', get_stylesheet_uri(), array(), "1.0");
+    wp_enqueue_style( 'azizultex', get_stylesheet_uri(), array(), date("ymd-Gis", filemtime( get_template_directory() . '/style.css' )));
 
 	/*** Enqueue scripts. */
 	wp_enqueue_script('jquery');
