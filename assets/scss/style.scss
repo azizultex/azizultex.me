@@ -660,6 +660,13 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.gform_wrapper {
+
+    .gform_validation_errors {
+        display: none;
+    }
+}
+
 .content {
 
     &__editor {
