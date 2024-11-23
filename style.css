@@ -937,6 +937,33 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+.content__editor .max-width {
+    padding: 3vw;
+    text-align: left;
+    max-width: 650px;
+    min-height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 800px) {
+    .content__editor .max-width {
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 100%;
+        min-height: auto;
+    }
+}
+
+.content__editor .wp-block-group {
+    margin-bottom: 40px;
+}
+
+.content__editor .wp-block-group:last-child {
+    margin-bottom: 0;
+}
+
 .loadingoverlay_text {
     text-align: center !important;
     font-size: clamp(1.5rem, 3.55vw, 2.625rem) !important;

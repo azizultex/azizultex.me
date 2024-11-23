@@ -781,6 +781,31 @@ h1, h2, h3, h4, h5, h6 {
                 }
             }
         }
+
+        .max-width {
+            padding: 3vw;
+            text-align: left;
+            max-width: 650px;
+            min-height: 100vh;
+            margin-left: auto;
+            margin-right: auto;
+
+            @media screen and (max-width: 800px) {
+                padding: 0;
+                margin-left: 0;
+                margin-right: 0;
+                max-width: 100%;
+                min-height: auto;
+            }
+        }
+
+        .wp-block-group {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 } 
 
