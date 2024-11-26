@@ -41,26 +41,22 @@ body {
     font: 400 20px/30px $tisa;
 }
 
-h1 {
-    font-size: 35px;
-    line-height: 1.5em;
-    letter-spacing: -0.02em;
-}
+h1, .h1 { font-size: 40px; }
+h2, .h2 { font-size: 36px; }
+h3, .h3 { font-size: 30px; }
+h4, .h4 { font-size: 24px; }
+h5, .h5 { font-size: 20px; }
+h6, .h6 { font-size: 18px; }
 
-h2 {
-    font-size: 26px;
-    line-height: 1.4em;
-}
-
-h3 {
-    font-size: 17px;
-    line-height: 1.2em;
-}
-
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     color: #334199;
     font-weight: 700;
     font-family: $azo;
+    line-height: 1.2em;
+}
+
+p {
+    margin-bottom: 1em;
 }
 
 .d-flex {
@@ -207,7 +203,6 @@ h1, h2, h3, h4, h5, h6 {
 
             @media screen and (max-width: 800px) {
                 max-width: 100%;
-
             }
         }
     }
@@ -285,6 +280,13 @@ h1, h2, h3, h4, h5, h6 {
         .contact-form {
             margin-top: 20px;
         }
+    }
+}
+
+.single-post {
+
+    .site {
+        overflow: inherit;
     }
 }
 
@@ -399,7 +401,66 @@ h1, h2, h3, h4, h5, h6 {
                 &.date {
 
                     &:after {
+                        right: -3px;
                         content: " - ";
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+
+    .postcontent {
+        
+        @media screen and (min-width: 800px) {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row-reverse;
+
+
+            .table-content {
+                top: 0;
+                position: sticky;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+
+            .content__editor {
+                padding-right: 30px;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+        }
+    }
+
+    .table-content {
+
+        .anchor-links {
+            margin: 0;
+            padding-inline-start: 35px ;
+
+            li {
+
+                a {
+                    color: #101a60;
+                    text-decoration: underline;
+                    @include transition(all 0.3s ease);
+
+                    strong {
+                        font-weight: 400;
+                    }
+
+                    &:hover {
+                        color: $green;
+                        text-decoration: underline;
+                    }
+                }
+
+                &.active {
+
+                    a {
+                        color: $green;
+                        text-decoration: underline;
                     }
                 }
             }
@@ -676,11 +737,7 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         p {
-            margin: 0 0 30px;
-
-            @media screen and (max-width: 800px) {
-                margin: 0 0 20px;
-            }
+            margin-bottom: 1em;
 
             &:last-child {
                 margin: 0;
@@ -751,6 +808,7 @@ h1, h2, h3, h4, h5, h6 {
 
         ul, ol {
             margin-bottom: 30px;
+            padding-inline-start: 1.25em;
 
             @media screen and (max-width: 800px) {
                 margin-bottom: 20px;
@@ -820,5 +878,347 @@ h1, h2, h3, h4, h5, h6 {
     &_text {
         text-align: center !important;
         font-size: clamp(1.5rem, 3.55vw, 2.625rem) !important;
+    }
+}
+
+// WordPress Default
+.wp-block-video {
+    overflow: hidden;
+    margin-bottom: 1em;
+    border-radius: 12px;
+
+    &.aspect-ratio-tiktok {
+        max-width: 400px;
+    }
+
+    &.alignleft {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    &.alignright {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    &.aligncenter {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.wp-block-gallery {
+    margin-bottom: 1em;
+
+    figure {
+
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+            position: relative;
+
+            &:before {
+                top: 50%;
+                left: 50%;
+                opacity: 0;
+                z-index: 1;
+                width: 50px;
+                height: 50px;
+                content: "+";
+                color: $white;
+                font-size: 30px;
+                overflow: hidden;
+                line-height: 47px;
+                background: $blue;
+                text-align: center;
+                position: absolute;
+                visibility: hidden;
+                border-radius: 500px;
+                @include transition(all 0.3s);
+                @include transform(translate(-50%, -50%) scale(1.4));
+            }
+
+            img {
+                width: 100%;
+                @include transition(all 0.3s ease);
+            }
+
+            &:hover {
+
+                &:before {
+                    opacity: 1;
+                    visibility: visible;
+                    @include transform(translate(-50%, -50%) scale(1));
+                }
+
+                img {
+                    @include transform(scale(1.2));
+                }
+            }
+        }
+
+        figcaption {
+            line-height: 1.3;
+            text-align: left !important;
+            padding: 15px 5px !important;
+        }
+    }
+}
+
+.wp-block-image {
+    overflow: hidden;
+    margin-bottom: 1em;
+    border-radius: 12px;
+
+    figure {
+
+        img {
+            height: auto;
+            width: 100% !important;
+        }
+
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: hidden;
+            position: relative;
+
+            &:before {
+                top: 50%;
+                left: 50%;
+                opacity: 0;
+                z-index: 1;
+                width: 50px;
+                height: 50px;
+                content: "+";
+                color: $white;
+                font-size: 30px;
+                overflow: hidden;
+                line-height: 47px;
+                background: $blue;
+                text-align: center;
+                position: absolute;
+                visibility: hidden;
+                border-radius: 500px;
+                @include transition(all 0.3s);
+                @include transform(translate(-50%, -50%) scale(1.4));
+            }
+
+            img {
+                width: 100%;
+                @include transition(all 0.3s ease);
+            }
+
+            &:hover {
+
+                &:before {
+                    opacity: 1;
+                    visibility: visible;
+                    @include transform(translate(-50%, -50%) scale(1));
+                }
+
+                img {
+                    @include transform(scale(1.2));
+                }
+            }
+        }
+
+        figcaption {
+            margin: 0;
+            padding: 15px;
+            font-size: 90%;
+            line-height: 1.4;
+        }
+    }
+
+    &:has(figcaption) {
+        background: #F1F1F1;
+    }
+}
+
+.mfp-move-from-top {
+    @include transition(initial);
+
+    &.mfp-bg {
+        opacity: 0.89 !important;
+        background-color: $black;
+        backdrop-filter: blur(8px);
+    }
+  
+    /* start state */
+    .mfp-with-anim {
+        opacity: 0;
+        @include transition(all 0.5s);
+        @include transform(translateY(300px));
+    }
+  
+    &.mfp-bg {
+        opacity: 0;
+        @include transition(all 0.5s);
+    }
+  
+    /* animate in */
+    &.mfp-ready {
+
+        .mfp-with-anim {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+
+        &.mfp-bg {
+            opacity: 0.8;
+        }
+    }
+  
+    /* animate out */
+    &.mfp-removing {
+
+        .mfp-with-anim {
+            transform: translateY(100px);
+            opacity: 0;
+        }
+
+        &.mfp-bg {
+            opacity: 0;
+        }
+    }
+
+    .mfp-container {
+        left: 0;
+        right: 0;
+        width: 100%;
+        padding: 0 20px;
+        max-width: 980px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mfp-close { 
+        top: 10px;
+        right: 10px;
+        width: auto;
+        height: auto;
+        color: $white;
+        display: flex;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 400;
+        line-height: 20px;
+        font-family: $tisa;
+        align-items: center;
+        opacity: 1 !important;
+        text-transform: uppercase;
+        @include transition(all 0.3s ease);
+
+        .icon {
+            font-size: 24px;
+        }
+
+        &:hover, &:focus {
+            color: $red;
+        }
+    }
+
+    .mfp-arrow {
+        opacity: 1;
+        width: 80px;    
+        height: 80px;   
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        overflow: hidden;
+        background: $red;
+        margin-top: -45px;
+        line-height: normal;
+        border-radius: 500px;
+        text-transform: uppercase;
+        @include transition(all 0.3s ease);
+        filter: drop-shadow(0px 36px 46px rgba(0, 0, 0, 0.08));
+
+        @media only screen and (max-width: 900px) {
+            margin-top: -80px;
+        }
+
+        @media only screen and (max-width: 575px) {
+            @include transform(scale(0.6));
+        }
+
+        &:after {
+            content: none;
+        }
+
+        &:before {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            opacity: 1;
+            color: $black;
+            display: flex;
+            width: inherit;
+            height: inherit;
+            position: inherit;
+            align-items: center;
+            justify-content: center;
+            @include transition(all 0.3s ease);
+        }
+
+        &.mfp-arrow-left {
+            left: 30px;
+
+            @media only screen and (max-width: 991px) {
+                left: 20px;
+            }
+
+            &:before {
+                content: "Prev";
+            }
+        }
+
+        &.mfp-arrow-right {
+            right: 30px;
+
+            @media only screen and (max-width: 991px) {
+                right: 20px;
+            }
+
+            &:before {
+                content: "Next";    
+            }
+        }
+
+        &:hover {
+            background: $red;
+
+            &:before {
+                color: $white;
+            }
+        }
+    }
+
+    .mfp-figure {
+
+        &:after {
+            display: none;
+        }
+
+        .mfp-img {
+            padding: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+    }
+
+    .mfp-bottom-bar {
+        margin-top: 5px;
+
+        .mfp-title {
+            padding: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+        }
     }
 }

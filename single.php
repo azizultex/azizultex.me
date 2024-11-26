@@ -57,14 +57,36 @@
 
 	                    	echo '</div>';
 
-	            			if( '' !== get_post()->post_content )
-	            	        {
-	            	        	echo '<div class="content__editor">';
+	                    	echo '<main class="postcontent">';
 
-	            	        		the_content();
+		                    	$toc_manager = new GC_TOC_Manager();
+		                    	$content_with_ids = $toc_manager->add_ids_to_headings(get_the_content());
+		                    	$heading_array = $toc_manager->create_toc_array();
 
-	            	        	echo '</div>';
-	            	        }
+		                    	if ( $heading_array ) 
+		                    	{
+		                    		echo '<div class="table-content">';
+			                    		echo '<ol class="anchor-links list-unstyled sscroll">';
+
+						            		foreach ( $heading_array as $key => $heading ) 
+						            		{
+						            			printf( '<li class="level-%s%s"><a href="#%s" class="anchor-link">%s</a></li>', $heading['level'], ( $key == 0 ? ' active' : ''), $heading['id'], $heading['title'] );
+						            		}
+
+							            echo '</ol>';
+						            echo '</div>';
+		                    	}
+
+		            			if ( '' !== get_post()->post_content )
+		            	        {
+		            	        	echo '<div class="content__editor">';
+
+		            	        		the_content();
+
+		            	        	echo '</div>';
+		            	        }
+
+	            	        echo '</main>';
 
 	            	        echo '<div class="entry-footer">';
 	            	        	echo '<a href="'.esc_url( get_the_permalink( get_option('page_for_posts') ) ).'" class="backlink"><span><ion-icon name="arrow-back-outline"></ion-icon></span>'.esc_html__( 'Back to Blog Posts', 'azizultex' ).'</a>';

@@ -1,4 +1,6 @@
 <?php
+require_once('includes/classes/TableContent.php');
+
 if ( ! function_exists( 'azizultex_setup' ) ) {
 
 	function azizultex_setup() {
@@ -22,13 +24,16 @@ add_action( 'after_setup_theme', 'azizultex_setup' );
 function azizultex_scripts() {
 
 	/*** Enqueue styles. */
+    wp_enqueue_style('magnific-popup', '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css', array(), false, 'all');
     wp_enqueue_style( 'azizultex', get_stylesheet_uri(), array(), date("ymd-Gis", filemtime( get_template_directory() . '/style.css' )));
 
 	/*** Enqueue scripts. */
 	wp_enqueue_script('jquery');
+    wp_enqueue_script('easing', '//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3.2/jquery.easing.min.js', array('jquery'), true);
 	wp_enqueue_script('sidr', '//cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js', array('jquery'), true);
 	wp_enqueue_script('ionesm', '//unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js', array('jquery'), true);
 	wp_enqueue_script('ionicons', '//unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js', array('jquery'), true);
+    wp_enqueue_script('magnific-popup', '//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js', array('jquery'), true);
 	wp_enqueue_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), date("ymd-Gis", filemtime( get_template_directory() . '/assets/js/scripts.js' )), true);
 }
 add_action( 'wp_enqueue_scripts', 'azizultex_scripts' );
