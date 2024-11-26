@@ -26,6 +26,17 @@
     <div class="navigation">
         <button class="navigation__toggler"><ion-icon name="grid-outline"></ion-icon></button>
 
+        <?php
+            wp_nav_menu( array(
+                'depth'              => 1,
+                'container'          => false,
+                'theme_location'     => 'menu-1',
+                'menu_class'         => 'navbar show mobile',
+                'menu'               => 'Primary Menu Mobile',
+                'menu_id'            => 'primary-menu-mobile',
+            ));
+        ?>
+
         <div id="sidr-main" class="sidr">
             <div class="sidr-header">
                 <button class="sidrclose"><ion-icon name="close-outline"></ion-icon></button>

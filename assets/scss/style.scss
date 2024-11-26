@@ -64,6 +64,8 @@ p {
 }
 
 .navigation {
+    z-index: 1;
+    position: relative;
 
     &__toggler {
         border: 0;
@@ -73,7 +75,7 @@ p {
         height: 50px;
         color: $white;
         z-index: 1030;
-        display: flex;
+        display: none;
         cursor: pointer;
         position: fixed;
         font-size: 20px;
@@ -81,6 +83,63 @@ p {
         align-items: center;
         border-radius: 500px;
         justify-content: center;
+
+        [name*="close-outline"] {
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 900px) {
+            display: flex;
+        }
+    }
+
+    > .navbar {
+        margin: 0;
+        top: 30px;
+        padding: 0;
+        right: 58px;
+        display: none;
+        position: fixed;
+        overflow: hidden;
+        list-style: none;
+
+        @media screen and (max-width: 900px) {
+            display: none !important;
+        }
+
+        &.show {
+            display: block;
+
+            li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        li {
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(-10px);
+            transition: opacity 0.3s, transform 0.3s;
+
+            a {
+                color: $blue;
+                display: block;
+                padding: 0 7px;
+                background: $white;
+                border-radius: 500px;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            &.active, &.current_page_item, &:hover {
+
+                a {
+                    color: $green;
+                    text-decoration: none;
+                }
+            }
+        }
     }
 
     .sidr {
@@ -151,7 +210,7 @@ p {
                         transition: all 0.3s ease;
                     }
 
-                    &.active, &:hover {
+                    &.active, &.current_page_item, &:hover {
 
                         a {
                             color: $green;

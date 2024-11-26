@@ -3,7 +3,6 @@
 	var isIE = /MSIE|Trident/.test(ua);
 
 	if ( !isIE ) {
-		//IE specific code goes here
 		"use strict";
 	}
 
