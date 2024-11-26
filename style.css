@@ -277,7 +277,7 @@ p {
     background: rgba(38, 51, 135, 0.1);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .site__banner {
         height: 75vw;
         max-width: 100%;
@@ -297,11 +297,11 @@ p {
 }
 
 .site:not(:has(.site__banner)) .site__content {
-    max-width: 1170px;
+    max-width: 920px;
     margin-right: auto;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .site:not(:has(.site__banner)) .site__content {
         max-width: 100%;
     }
@@ -315,7 +315,7 @@ p {
     margin-left: auto;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .site__content {
         max-width: 100%;
         margin-left: auto;
@@ -344,7 +344,7 @@ p {
     margin-right: auto;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .site__content .main-content {
         min-height: auto;
         padding: 30px 20px 20px;
@@ -377,9 +377,10 @@ p {
 
 .site__content .other-content {
     padding: 3vw;
+    padding-top: 100px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .site__content .other-content {
         padding: 30px 20px 30px;
     }
@@ -402,7 +403,7 @@ p {
     border-bottom-right-radius: 12px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .featured-image {
         height: 320px;
     }
@@ -423,11 +424,14 @@ p {
 
 .blog-content {
     padding: 3vw;
+    padding-top: 100px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .blog-content {
-        padding: 30px 20px 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
     }
 }
 
@@ -528,40 +532,45 @@ p {
     position: relative;
 }
 
-@media screen and (min-width: 800px) {
-    .blog-content .postcontent {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: start;
-            -ms-flex-align: start;
-                align-items: flex-start;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: reverse;
-            -ms-flex-direction: row-reverse;
-                flex-direction: row-reverse;
-    }
-    .blog-content .postcontent .table-content {
-        top: 0;
-        position: sticky;
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 33.333333%;
-                flex: 0 0 33.333333%;
-        max-width: 33.333333%;
-    }
-    .blog-content .postcontent .content__editor {
-        padding-right: 30px;
-        -webkit-box-flex: 0;
-            -ms-flex: 0 0 66.666667%;
-                flex: 0 0 66.666667%;
-        max-width: 66.666667%;
+.blog-content .postcontent {
+    position: relative;
+}
+
+.blog-content .table-content {
+    top: 0;
+    height: 100%;
+    right: -380px;
+    max-width: 350px;
+    position: absolute;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 1366px) {
+    .blog-content .table-content {
+        height: auto;
+        right: inherit;
+        max-width: 100%;
+        position: inherit;
     }
 }
 
 .blog-content .table-content .anchor-links {
+    top: 80px;
     margin: 0;
+    position: sticky;
     -webkit-padding-start: 35px;
             padding-inline-start: 35px;
+}
+
+@media screen and (max-width: 1366px) {
+    .blog-content .table-content .anchor-links {
+        top: inherit;
+        position: inherit;
+    }
+}
+
+.blog-content .table-content .anchor-links li {
+    margin-bottom: 5px;
 }
 
 .blog-content .table-content .anchor-links li a {
@@ -812,6 +821,7 @@ p {
 .blog-post .media {
     line-height: 0;
     max-width: 180px;
+    min-width: 180px;
     overflow: hidden;
     border-radius: 8px;
     margin-right: 15px;
@@ -819,15 +829,17 @@ p {
         align-self: flex-start;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 900px) {
     .blog-post .media {
         max-width: 130px;
+        min-width: 130px;
     }
 }
 
 @media screen and (max-width: 575px) {
     .blog-post .media {
         max-width: 110px;
+        min-width: 110px;
     }
 }
 
@@ -835,6 +847,7 @@ p {
     width: 100%;
     height: auto;
     max-width: 100%;
+    min-width: inherit;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -923,7 +936,7 @@ p {
     margin-bottom: 30px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .content__editor .btn {
         margin-bottom: 20px;
     }
@@ -951,7 +964,7 @@ p {
             box-shadow: 0px 24px 66px rgba(0, 0, 0, 0.06);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .content__editor blockquote {
         margin-top: 20px;
         padding-left: 70px;
@@ -975,7 +988,7 @@ p {
             padding-inline-start: 1.25em;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .content__editor ul, .content__editor ol {
         margin-bottom: 20px;
     }
@@ -1002,7 +1015,7 @@ p {
     margin-bottom: 20px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .content__editor ul li ul, .content__editor ul li ol, .content__editor ol li ul, .content__editor ol li ol {
         margin-top: 15px;
         margin-bottom: 15px;
@@ -1016,7 +1029,7 @@ p {
     margin-right: auto;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .content__editor .max-width {
         margin-left: 0;
         margin-right: 0;
@@ -1029,7 +1042,7 @@ p {
     min-height: 100vh;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
     .content__editor .h-100vh {
         padding: 0;
         min-height: auto;
@@ -1144,7 +1157,14 @@ p {
     width: 100% !important;
 }
 
-.wp-block-image figure a {
+.wp-block-image figure figcaption {
+    margin: 0;
+    padding: 15px;
+    font-size: 90%;
+    line-height: 1.4;
+}
+
+.wp-block-image a {
     width: 100%;
     height: 100%;
     display: block;
@@ -1152,7 +1172,7 @@ p {
     position: relative;
 }
 
-.wp-block-image figure a:before {
+.wp-block-image a:before {
     top: 50%;
     left: 50%;
     opacity: 0;
@@ -1175,29 +1195,22 @@ p {
     transform: translate(-50%, -50%) scale(1.4);
 }
 
-.wp-block-image figure a img {
+.wp-block-image a img {
     width: 100%;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
-.wp-block-image figure a:hover:before {
+.wp-block-image a:hover:before {
     opacity: 1;
     visibility: visible;
     -webkit-transform: translate(-50%, -50%) scale(1);
     transform: translate(-50%, -50%) scale(1);
 }
 
-.wp-block-image figure a:hover img {
+.wp-block-image a:hover img {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
-}
-
-.wp-block-image figure figcaption {
-    margin: 0;
-    padding: 15px;
-    font-size: 90%;
-    line-height: 1.4;
 }
 
 .wp-block-image:has(figcaption) {
@@ -1258,7 +1271,7 @@ p {
     right: 0;
     width: 100%;
     padding: 0 20px;
-    max-width: 980px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1304,7 +1317,7 @@ p {
     font-size: 14px;
     font-weight: 500;
     overflow: hidden;
-    background: #EF4136;
+    background: #263387;
     margin-top: -45px;
     line-height: normal;
     border-radius: 500px;
@@ -1337,7 +1350,7 @@ p {
     border: 0;
     padding: 0;
     opacity: 1;
-    color: #000000;
+    color: #FFFFFF;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1358,7 +1371,7 @@ p {
     left: 30px;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 900px) {
     .mfp-move-from-top .mfp-arrow.mfp-arrow-left {
         left: 20px;
     }
@@ -1372,7 +1385,7 @@ p {
     right: 30px;
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 900px) {
     .mfp-move-from-top .mfp-arrow.mfp-arrow-right {
         right: 20px;
     }
@@ -1383,7 +1396,7 @@ p {
 }
 
 .mfp-move-from-top .mfp-arrow:hover {
-    background: #EF4136;
+    background: #3ad15c;
 }
 
 .mfp-move-from-top .mfp-arrow:hover:before {

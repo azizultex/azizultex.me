@@ -35,7 +35,16 @@
             {
                 echo '<div class="description">';
 
-                    the_excerpt();
+                    printf( 
+                        '%s',  
+                        wpautop( 
+                            wp_trim_words( 
+                                get_the_excerpt(), 
+                                12, 
+                                '...' 
+                            ) 
+                        )
+                    );
 
                 echo '</div>';
             }

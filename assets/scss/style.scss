@@ -178,7 +178,7 @@ p {
         position: fixed;
         background: rgba($blue, 0.1);
 
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 900px) {
             height: 75vw;
             max-width: 100%;
             position: relative;
@@ -198,10 +198,10 @@ p {
     &:not(:has(.site__banner)) {
 
         .site__content {
-            max-width: 1170px;
+            max-width: 920px;
             margin-right: auto;
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 max-width: 100%;
             }
         }
@@ -214,7 +214,7 @@ p {
         min-height: 100%;
         margin-left: auto;
 
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 900px) {
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
@@ -234,7 +234,7 @@ p {
                 margin-right: auto;
             }
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 min-height: auto;
                 padding: 30px 20px 20px;
 
@@ -271,8 +271,9 @@ p {
 
         .other-content {
             padding: 3vw;
+            padding-top: 100px;
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 padding: 30px 20px 30px;
             }
         }
@@ -298,7 +299,7 @@ p {
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 900px) {
         height: 320px;
 
     }
@@ -317,9 +318,12 @@ p {
 
 .blog-content {
     padding: 3vw;
+    padding-top: 100px;
 
-    @media screen and (max-width: 800px) {
-        padding: 30px 20px 30px;
+    @media screen and (max-width: 900px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
     }
 
     .entry-title {
@@ -411,35 +415,37 @@ p {
     }
 
     .postcontent {
-        
-        @media screen and (min-width: 800px) {
-            display: flex;
-            align-items: flex-start;
-            flex-direction: row-reverse;
-
-
-            .table-content {
-                top: 0;
-                position: sticky;
-                flex: 0 0 33.333333%;
-                max-width: 33.333333%;
-            }
-
-            .content__editor {
-                padding-right: 30px;
-                flex: 0 0 66.666667%;
-                max-width: 66.666667%;
-            }
-        }
+        position: relative;
     }
 
     .table-content {
+        top: 0;
+        height: 100%;
+        right: -380px;
+        max-width: 350px;
+        position: absolute;
+        margin-bottom: 1em;
+
+        @media screen and (max-width: 1366px) {
+            height: auto;
+            right: inherit;
+            max-width: 100%;
+            position: inherit;
+        }
 
         .anchor-links {
+            top: 80px;
             margin: 0;
-            padding-inline-start: 35px ;
+            position: sticky;
+            padding-inline-start: 35px;
+
+            @media screen and (max-width: 1366px) {
+                top: inherit;
+                position: inherit;
+            }
 
             li {
+                margin-bottom: 5px;
 
                 a {
                     color: #101a60;
@@ -648,23 +654,27 @@ p {
     .media {
         line-height: 0;
         max-width: 180px;
+        min-width: 180px;
         overflow: hidden;
         border-radius: 8px;
         margin-right: 15px;
         align-self: flex-start;
 
-        @media screen and (max-width: 991px) {
+        @media screen and (max-width: 900px) {
             max-width: 130px;
+            min-width: 130px;
         }
 
         @media screen and (max-width: 575px) {
             max-width: 110px;
+            min-width: 110px;
         }
 
         img {
             width: 100%;
             height: auto;
             max-width: 100%;
+            min-width: inherit;
             transition: all 0.3s ease;
         }
     }
@@ -763,7 +773,7 @@ p {
         .btn {
             margin-bottom: 30px;
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 margin-bottom: 20px;
             }
         }
@@ -789,7 +799,7 @@ p {
             margin-inline-start: 0;
             box-shadow: 0px 24px 66px rgba(0, 0, 0, 0.06);
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 margin-top: 20px;
                 padding-left: 70px;
                 margin-bottom: 20px;
@@ -810,7 +820,7 @@ p {
             margin-bottom: 30px;
             padding-inline-start: 1.25em;
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 margin-bottom: 20px;
             }
 
@@ -832,7 +842,7 @@ p {
                     margin-top: 20px;
                     margin-bottom: 20px;
 
-                    @media screen and (max-width: 800px) {
+                    @media screen and (max-width: 900px) {
                         margin-top: 15px;
                         margin-bottom: 15px;
                     }
@@ -846,7 +856,7 @@ p {
             margin-left: auto;
             margin-right: auto;
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 margin-left: 0;
                 margin-right: 0;
                 max-width: 100%;
@@ -857,7 +867,7 @@ p {
             padding: 3vw;
             min-height: 100vh;
 
-            @media screen and (max-width: 800px) {
+            @media screen and (max-width: 900px) {
                 padding: 0;
                 min-height: auto;
             }
@@ -979,58 +989,58 @@ p {
             width: 100% !important;
         }
 
-        a {
-            width: 100%;
-            height: 100%;
-            display: block;
-            overflow: hidden;
-            position: relative;
-
-            &:before {
-                top: 50%;
-                left: 50%;
-                opacity: 0;
-                z-index: 1;
-                width: 50px;
-                height: 50px;
-                content: "+";
-                color: $white;
-                font-size: 30px;
-                overflow: hidden;
-                line-height: 47px;
-                background: $blue;
-                text-align: center;
-                position: absolute;
-                visibility: hidden;
-                border-radius: 500px;
-                @include transition(all 0.3s);
-                @include transform(translate(-50%, -50%) scale(1.4));
-            }
-
-            img {
-                width: 100%;
-                @include transition(all 0.3s ease);
-            }
-
-            &:hover {
-
-                &:before {
-                    opacity: 1;
-                    visibility: visible;
-                    @include transform(translate(-50%, -50%) scale(1));
-                }
-
-                img {
-                    @include transform(scale(1.2));
-                }
-            }
-        }
-
         figcaption {
             margin: 0;
             padding: 15px;
             font-size: 90%;
             line-height: 1.4;
+        }
+    }
+
+    a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+        position: relative;
+
+        &:before {
+            top: 50%;
+            left: 50%;
+            opacity: 0;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            content: "+";
+            color: $white;
+            font-size: 30px;
+            overflow: hidden;
+            line-height: 47px;
+            background: $blue;
+            text-align: center;
+            position: absolute;
+            visibility: hidden;
+            border-radius: 500px;
+            @include transition(all 0.3s);
+            @include transform(translate(-50%, -50%) scale(1.4));
+        }
+
+        img {
+            width: 100%;
+            @include transition(all 0.3s ease);
+        }
+
+        &:hover {
+
+            &:before {
+                opacity: 1;
+                visibility: visible;
+                @include transform(translate(-50%, -50%) scale(1));
+            }
+
+            img {
+                @include transform(scale(1.2));
+            }
         }
     }
 
@@ -1091,7 +1101,7 @@ p {
         right: 0;
         width: 100%;
         padding: 0 20px;
-        max-width: 980px;
+        max-width: 900px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1130,7 +1140,7 @@ p {
         font-size: 14px;
         font-weight: 500;
         overflow: hidden;
-        background: $red;
+        background: $blue;
         margin-top: -45px;
         line-height: normal;
         border-radius: 500px;
@@ -1155,7 +1165,7 @@ p {
             border: 0;
             padding: 0;
             opacity: 1;
-            color: $black;
+            color: $white;
             display: flex;
             width: inherit;
             height: inherit;
@@ -1168,7 +1178,7 @@ p {
         &.mfp-arrow-left {
             left: 30px;
 
-            @media only screen and (max-width: 991px) {
+            @media only screen and (max-width: 900px) {
                 left: 20px;
             }
 
@@ -1180,7 +1190,7 @@ p {
         &.mfp-arrow-right {
             right: 30px;
 
-            @media only screen and (max-width: 991px) {
+            @media only screen and (max-width: 900px) {
                 right: 20px;
             }
 
@@ -1190,7 +1200,7 @@ p {
         }
 
         &:hover {
-            background: $red;
+            background: $green;
 
             &:before {
                 color: $white;

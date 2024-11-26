@@ -82,8 +82,8 @@
         window.addEventListener('scroll', scrollHandler);
     }
 
-    $('div.wp-block-image').magnificPopup({
-        delegate: 'a',
+    $('div.wp-block-image, figure.wp-block-image').magnificPopup({
+        delegate: 'a:not(.wp-block-gallery a)',
         type: 'image',
         midClick: true,
         fixedBgPos: true,
@@ -102,9 +102,6 @@
             beforeOpen: function() {
                 this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
                 this.st.mainClass = 'mfp-move-from-top vertical-middle';
-            },
-            buildControls: function() {
-                // this.contentContaine.append(this.arrowLeft.add(this.arrowRight));
             }
         },
         closeOnContentClick: true,
@@ -112,34 +109,36 @@
         closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close">Close <span class="icon"><ion-icon name="close-outline"></ion-icon></span></button>',
     });
 
-    $('figure.wp-block-gallery').magnificPopup({
-        delegate: 'a',
-        type: 'image',
-        midClick: true,
-        preloader: false,
-        fixedBgPos: true,
-        removalDelay: 500,
-        fixedContentPos: true,
-        closeBtnInside: false,
-        gallery: {
-            enabled: true,
-            navigateByImgClick: true,
-            preload: [0,1]
-        },
-        image: {
-            verticalFit: true,
-            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-            titleSrc: function(item) {
-                return item.el.find('img').attr('alt');
-            }
-        },
-        callbacks: {
-            beforeOpen: function() {
-                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-                this.st.mainClass = 'mfp-move-from-top vertical-middle';
+    $('figure.wp-block-gallery').each(function() {
+        $(this).magnificPopup({
+            delegate: 'a',
+            type: 'image',
+            midClick: true,
+            preloader: false,
+            fixedBgPos: true,
+            removalDelay: 500,
+            fixedContentPos: true,
+            closeBtnInside: false,
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1]
             },
-        },
-        closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close">Close <span class="icon"><ion-icon name="close-outline"></ion-icon></span></button>',
+            image: {
+                verticalFit: true,
+                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+                titleSrc: function(item) {
+                    return item.el.find('img').attr('alt');
+                }
+            },
+            callbacks: {
+                beforeOpen: function() {
+                    this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+                    this.st.mainClass = 'mfp-move-from-top vertical-middle';
+                },
+            },
+            closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close">Close <span class="icon"><ion-icon name="close-outline"></ion-icon></span></button>',
+        });
     });
 
 }(jQuery));
