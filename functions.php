@@ -38,6 +38,39 @@ function azizultex_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'azizultex_scripts' );
 
+/*** Reorder dashboard menu */
+function reorder_admin_menu( $__return_true ) {
+    return array(
+        'index.php',                 // Dashboard
+        'separator1',                // --Space--
+        'acf-options',               // ACF Theme Settings
+        'edit.php',                 // Pages 
+        'edit.php?post_type=page',   // Pages 
+        'edit.php?post_type=tribe_events',   // Pages 
+        'edit.php?post_type=leadership',   // Pages 
+        'edit.php?post_type=call_action',   // Pages 
+        'edit.php?post_type=spotlight',   // Pages 
+        'gf_edit_forms',             // Gravity Forms
+        'upload.php',                // Media
+        'wpseo_dashboard',           // Yoasta
+        'gadash_settings',           // Google Analytics
+        'themes.php',                // Appearance
+        'edit-comments.php',         // Comments 
+        'users.php',                 // Users
+        'tools.php',                 // Tools
+        'options-general.php',       // Settings
+        'plugins.php',               // Plugins
+    );
+}
+add_filter( 'custom_menu_order', 'reorder_admin_menu' );
+add_filter( 'menu_order', 'reorder_admin_menu' );
+
+/*** Remove dashboard menu */
+function remove_admin_menus() {
+    remove_menu_page( 'sharethis-inline-sticky-share-buttons' );
+}
+add_action( 'admin_menu', 'remove_admin_menus', 999);
+
 /*** Return an alternate title, without prefix, for every type used in the get_the_archive_title(). */
 add_filter('get_the_archive_title', function ($title) {
 

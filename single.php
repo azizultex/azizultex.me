@@ -92,6 +92,16 @@
 	            	        	echo '<a href="'.esc_url( get_the_permalink( get_option('page_for_posts') ) ).'" class="backlink"><span><ion-icon name="arrow-back-outline"></ion-icon></span>'.esc_html__( 'Back to Blog Posts', 'azizultex' ).'</a>';
 	            	        	echo '<div class="sharethis-inline-share-buttons"></div>';
 	            	        echo '</div>';
+
+	                        if ( comments_open() || get_comments_number() ) 
+	                        {
+    	                    	echo '<div class="entry-comments">';
+	                            	
+	                            	comments_template();
+
+	                        	echo '</div>';
+	                        }
+
 	            	    echo '</div>';
             		}
             	}
