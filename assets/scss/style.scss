@@ -473,29 +473,11 @@ p {
         }
     }
 
-    .postcontent {
-        position: relative;
-    }
-
     .table-content {
-        top: 0;
-        height: 100%;
-        right: -380px;
-        max-width: 350px;
-        position: absolute;
         margin-bottom: 1em;
 
-        @media screen and (max-width: 1366px) {
-            height: auto;
-            right: inherit;
-            max-width: 100%;
-            position: inherit;
-        }
-
         .anchor-links {
-            top: 80px;
             margin: 0;
-            position: sticky;
             padding-inline-start: 35px;
 
             @media screen and (max-width: 1366px) {
@@ -710,6 +692,10 @@ p {
     position: relative;
     align-items: center;
 
+    @media screen and (max-width: 575px) {
+        display: block;
+    }
+
     .media {
         line-height: 0;
         max-width: 180px;
@@ -725,8 +711,10 @@ p {
         }
 
         @media screen and (max-width: 575px) {
-            max-width: 110px;
-            min-width: 110px;
+            max-width: 100%;
+            margin-right: 0;
+            min-width: inherit;
+            margin-bottom: 15px;
         }
 
         img {

@@ -601,32 +601,12 @@ p {
     position: relative;
 }
 
-.blog-content .postcontent {
-    position: relative;
-}
-
 .blog-content .table-content {
-    top: 0;
-    height: 100%;
-    right: -380px;
-    max-width: 350px;
-    position: absolute;
     margin-bottom: 1em;
 }
 
-@media screen and (max-width: 1366px) {
-    .blog-content .table-content {
-        height: auto;
-        right: inherit;
-        max-width: 100%;
-        position: inherit;
-    }
-}
-
 .blog-content .table-content .anchor-links {
-    top: 80px;
     margin: 0;
-    position: sticky;
     -webkit-padding-start: 35px;
             padding-inline-start: 35px;
 }
@@ -887,6 +867,12 @@ p {
             align-items: center;
 }
 
+@media screen and (max-width: 575px) {
+    .blog-post {
+        display: block;
+    }
+}
+
 .blog-post .media {
     line-height: 0;
     max-width: 180px;
@@ -907,8 +893,10 @@ p {
 
 @media screen and (max-width: 575px) {
     .blog-post .media {
-        max-width: 110px;
-        min-width: 110px;
+        max-width: 100%;
+        margin-right: 0;
+        min-width: inherit;
+        margin-bottom: 15px;
     }
 }
 

@@ -9,7 +9,7 @@ if ( ! function_exists( 'azizultex_setup' ) ) {
 
 		/** Enable support for Post Thumbnails on posts and pages. */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'post_thumb', 180, 240, true );
+		add_image_size( 'post_thumb', 535, 535, true );
 		add_image_size( 'post_large', 1140, 380, true );
 
 		/** This theme uses wp_nav_menu() in one location. */
